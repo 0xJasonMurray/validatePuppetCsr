@@ -8,7 +8,7 @@
 ## Overview
 
 Set of scripts to needed to modify and validate Puppet CSRs when using 
-the autosign features of the puppet master.
+the policy based autosigning features of the puppet master.
 
 Note: This has been tested on AWS using a Ubuntu 14.04 LTS server image.
 
@@ -20,17 +20,17 @@ is sent to the Puppet Master.
 
 Copy the cloud-config.txt and cloudinit-puppet.sh to a directory and run:
 
-  write-mime-multipart --output=combined-userdata.txt \
-    cloud-config.txt \
-    cloudinit-puppet.sh:text/x-shellscript
+    write-mime-multipart --output=combined-userdata.txt \
+        cloud-config.txt \
+        cloudinit-puppet.sh:text/x-shellscript
 
 
 Then build an AWS instance with a command similar to:
 
     ec2-run-instances -O awsAccessKey \
-      -W awsSecretKey --region us-west-2 \
-      -f combined-userdata.txt -g sg-SecurityGroupId -k sshKeyId -n 1 \
-      -s subnet-ID -t t2.micro -z us-west-2b  ami-3d50120d
+        -W awsSecretKey --region us-west-2 \
+        -f combined-userdata.txt -g sg-SecurityGroupId -k sshKeyId -n 1 \
+        -s subnet-ID -t t2.micro -z us-west-2b  ami-3d50120d
 
 
 Note: The following packages must be installed: ec2-api-tools, 
