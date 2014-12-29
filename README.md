@@ -2,8 +2,8 @@
 
 #### Table of Contents
 1. [Overview](#overview)
-2. [Client Side Configuration](#clientside)
-3. [Puppet Master Side](#puppetmasterside)
+2. [Puppet Master Side](#puppet-master-side)
+3. [Client Side Configuration](#client-side-configuration)
 
 ## Overview
 
@@ -11,6 +11,18 @@ Set of scripts to needed to modify and validate Puppet CSRs when using
 the policy based autosigning features of the puppet master.
 
 Note: This has been tested on AWS using a Ubuntu 14.04 LTS server image.
+
+
+## Puppet Master Side
+
+Copy the validate-puppet.py file to /etc/puppet
+
+Add the following lines to the master section of the /etc/puppet/puppet.conf 
+file:
+
+    [master]
+    autosign = /etc/puppet/validate-puppet.py
+
 
 
 ## Client Side Configuration
@@ -44,16 +56,5 @@ example.com.   Puppet will search for puppet.example.com
 
 When the system boots up it will build the server using the Ubuntu 14.04 LTS
 image, install Puppet, connect to the puppet master, and build the server.
-
-
-## Puppet Master Side
-
-Copy the validate-puppet.py file to /etc/puppet
-
-Add the following lines to the master section of the /etc/puppet/puppet.conf 
-file:
-
-    [master]
-    autosign = /etc/puppet/validate-puppet.py
 
 
