@@ -4,6 +4,7 @@
 1. [Overview](#overview)
 2. [Puppet Master Side](#puppet-master-side)
 3. [Client Side Configuration](#client-side-configuration)
+4. [References](#references)
 
 ## Overview
 
@@ -57,4 +58,9 @@ example.com.   Puppet will search for puppet.example.com
 When the system boots up it will build the server using the Ubuntu 14.04 LTS
 image, install Puppet, connect to the puppet master, and build the server.
 
+## References
+
+* https://docs.puppetlabs.com/puppet/latest/reference/ssl_attributes_extensions.html
+* https://docs.puppetlabs.com/puppet/latest/reference/ssl_autosign.html#policy-based-autosigning
+* https://help.ubuntu.com/community/CloudInit
 
