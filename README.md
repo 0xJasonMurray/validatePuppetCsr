@@ -59,8 +59,9 @@ example.com, then the DHCP server must set the DHCP suffix search to
 example.com.   Puppet will search for puppet.example.com
 
 
-When the system boots up it will build the server using the Ubuntu 14.04 LTS
-image, install Puppet, connect to the puppet master, and build the server.
+When the system boots up it will install the server using the Ubuntu 14.04 LTS
+image, install Puppet, connect to the puppet master, puppet will finish
+the server configuration.
 
 ## References
 
