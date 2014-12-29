@@ -11,6 +11,10 @@
 Set of scripts to needed to modify and validate Puppet CSRs when using 
 the policy based autosigning features of the puppet master.
 
+The overall design goal is to build a server from bare metal to fully
+production ready with no user interaction while validating who is allowed
+to connect to the puppet master.  
+
 Note: This has been tested on AWS using a Ubuntu 14.04 LTS server image.
 
 
