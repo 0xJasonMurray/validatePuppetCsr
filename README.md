@@ -27,7 +27,7 @@ file:
 
 ## Client Side Configuration
 
-cloud-init on AWS was used install puppet and modify the CSR before it 
+cloud-init on AWS was used to install puppet and modify the CSR before it 
 is sent to the Puppet Master. 
 
 Copy the cloud-config.txt and cloudinit-puppet.sh to a directory and run:
@@ -48,7 +48,7 @@ Then build an AWS instance with a command similar to:
 Note: The following packages must be installed: ec2-api-tools, 
 cloud-image-utils
 
-Note: The DHCP must set the domain search for the DNS domain the puppet master
+Note: DHCP must set the domain search for the DNS domain the puppet master
 server resides in.  For example, if the DNS domain for the puppet master is 
 example.com, then the DHCP server must set the DHCP suffix search to 
 example.com.   Puppet will search for puppet.example.com
